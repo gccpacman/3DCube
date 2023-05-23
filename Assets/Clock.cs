@@ -18,13 +18,14 @@ public class Clock : MonoBehaviour
     float minutesToDegrees = -6;
     float secondsToDegrees = -6;
 
-    private void Awake()
+    void Awake()
     {
-        Debug.Log(DateTime.Now);
-        hoursPivot.localRotation = Quaternion.Euler(0, 0, hoursToDegrees * DateTime.Now.Hour);
-        minutesPivot.localRotation = Quaternion.Euler(0, 0, minutesToDegrees * DateTime.Now.Minute);
-        secondsPivot.localRotation = Quaternion.Euler(0, 0, secondsToDegrees * DateTime.Now.Second);
-        Debug.Log(hoursPivot.localRotation + " " + minutesPivot.localRotation + " " + secondsPivot.localRotation);
+        //DateTime time = DateTime.Now;
+        //Debug.Log(time);
+        //hoursPivot.localRotation = Quaternion.Euler(0, 0, hoursToDegrees * time.Hour);
+        //minutesPivot.localRotation = Quaternion.Euler(0, 0, minutesToDegrees * time.Minute);
+        //secondsPivot.localRotation = Quaternion.Euler(0, 0, secondsToDegrees * time.Second);
+        //Debug.Log(hoursPivot.localRotation + " " + minutesPivot.localRotation + " " + secondsPivot.localRotation);
     }
 
     // Start is called before the first frame update 
@@ -36,6 +37,11 @@ public class Clock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        DateTime time = DateTime.Now;
+        Debug.Log(time);
+        hoursPivot.localRotation = Quaternion.Euler(0, 0, hoursToDegrees * time.Hour);
+        minutesPivot.localRotation = Quaternion.Euler(0, 0, minutesToDegrees * time.Minute);
+        secondsPivot.localRotation = Quaternion.Euler(0, 0, secondsToDegrees * time.Second);
+        Debug.Log(hoursPivot.localRotation + " " + minutesPivot.localRotation + " " + secondsPivot.localRotation);
     }
 }
